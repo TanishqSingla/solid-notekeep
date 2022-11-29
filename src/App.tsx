@@ -1,9 +1,12 @@
 import type { Component } from 'solid-js';
-import Header from './HOC/Layout/Header/Header';
+import Footer from './components/Layout/Footer/Footer';
+import Header from './components/Layout/Header/Header';
 
 const App: Component = () => {
-  return (
+  return (<>
     <Header />
+    <Footer />
+  </>
   );
 };
 
