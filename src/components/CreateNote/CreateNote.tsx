@@ -10,12 +10,14 @@ export default function () {
 		if(siblingFocused)
 			return;
 		setFocused(false);
+		if(!contentRef?.value)
+			return;
 	}
 
 	return (
-		<form class="createNote" onFocusIn={() => setFocused(true)} onFocusOut={handleFocusOut}>
+		<form class="createNote" onFocusOut={handleFocusOut}>
 			{focused() && <input placeholder="Title" ref={titleRef} onFocus={handleFocusOut}/>}
-			<input ref={contentRef} placeholder="Take a note..." />
+			<input ref={contentRef} placeholder="Take a note..." onFocus={() => setFocused(true)}/>
 		</form>
 	);
 }

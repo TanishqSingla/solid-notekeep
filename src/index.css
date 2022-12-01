@@ -10,5 +10,5 @@ body {
   @apply mx-auto max-w-lg flex flex-col border border-slate-200 shadow-sm min-h-[8rem]
 }
 .createNote input {
-  @apply bg-transparent p-4 focus:outline-none
+  @apply bg-transparent p-4 focus:outline-none text-white
 }
