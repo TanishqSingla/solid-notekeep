@@ -7,8 +7,12 @@ export default function () {
 
 	const handleFocusOut = (e: FocusEvent) => {
 		const relatedTarget = e.relatedTarget;
+		const eventTarget = e.target as HTMLDivElement 
 		if (relatedTarget) return;
 		if (e.target === document.activeElement) return;
+		if(!eventTarget.textContent) {
+			eventTarget.innerHTML = '';
+		}
 		setFocused(false);
 	}
 
