@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .custom-placeholder {
+    @apply opacity-60 font-semibold cursor-text
+  }
+}
+
 body {
   @apply bg-[#212121]
 }
@@ -9,6 +15,22 @@ body {
 .createNote {
   @apply mx-auto max-w-lg flex flex-col border border-[#5f6368] shadow-sm shadow-black rounded-lg
 }
-.createNote textarea {
-  @apply bg-transparent py-2 px-4 focus:outline-none text-white break-words w-full resize-none
+.input {
+  @apply bg-transparent p-4 focus:outline-none text-white break-words w-full resize-none
+}
+
+.titleInput {
+  @apply text-lg
+}
+.titleInput:empty::before {
+  content: attr(aria-label);
+  @apply custom-placeholder
+}
+
+.contentInput {
+  @apply text-base
+}
+.contentInput:empty::before {
+  content: attr(aria-label);
+  @apply custom-placeholder
 }
