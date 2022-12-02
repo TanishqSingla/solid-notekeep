@@ -5,7 +5,7 @@ import Header from './components/Layout/Header/Header';
 const App: Component = () => {
   return (<>
     <Header />
-    <main>
+    <main class="p-8">
       <CreateNote />
     </main>
   </>

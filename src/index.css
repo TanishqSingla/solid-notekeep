@@ -7,8 +7,8 @@ body {
 }
 
 .createNote {
-  @apply mx-auto max-w-lg flex flex-col border border-[#5f6368] shadow-sm rounded-lg
+  @apply mx-auto max-w-lg flex flex-col border border-[#5f6368] shadow-sm shadow-black rounded-lg
 }
-.createNote input {
-  @apply bg-transparent p-4 focus:outline-none text-white
+.createNote textarea {
+  @apply bg-transparent py-2 px-4 focus:outline-none text-white break-words w-full resize-none
 }

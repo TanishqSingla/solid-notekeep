@@ -3,7 +3,7 @@ import { createSignal } from "solid-js";
 export default function () {
 	const [focused, setFocused] = createSignal(false);
 
-	let titleRef: Refs<HTMLInputElement>, contentRef: Refs<HTMLInputElement>;
+	let titleRef: Refs<HTMLTextAreaElement>, contentRef: Refs<HTMLTextAreaElement>;
 
 	const handleFocusOut = (e: FocusEvent) => {
 		const relatedTarget = e.relatedTarget;
@@ -15,13 +15,21 @@ export default function () {
 
 		setFocused(false);
 
-		if(!contentRef?.value) return;
+		if(contentRef?.innerHTML) {
+			console.log('save')
+		}
+	}
+
+	const handleFocus = (e: FocusEvent) => {
+		setFocused(true);
+		const eventTarget = e.target as HTMLDivElement 
+		eventTarget.innerHTML = ''
 	}
 
 	return (
 		<form class="createNote" onFocusOut={handleFocusOut}>
-			{focused() && <input placeholder="Title" ref={titleRef} />}
-			<input ref={contentRef} placeholder="Take a note..." onFocus={() => setFocused(true)}/>
+			{focused() && <textarea ref={titleRef} class="text-lg" />}
+			<textarea ref={contentRef} onFocus={handleFocus} class="text-base" />
 		</form>
 	);
 }
