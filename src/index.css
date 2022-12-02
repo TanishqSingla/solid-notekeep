@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply bg-stone-800
+  @apply bg-[#212121]
 }
 
 .createNote {
-  @apply mx-auto max-w-lg flex flex-col border border-slate-200 shadow-sm min-h-[8rem]
+  @apply mx-auto max-w-lg flex flex-col border border-[#5f6368] shadow-sm rounded-lg
 }
 .createNote input {
   @apply bg-transparent p-4 focus:outline-none text-white
