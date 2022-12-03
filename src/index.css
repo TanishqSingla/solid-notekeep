@@ -3,34 +3,43 @@
 @tailwind utilities;
 
 @layer components {
-  .custom-placeholder {
-    @apply opacity-60 font-semibold cursor-text
-  }
+	.custom-placeholder {
+		@apply opacity-60 font-semibold cursor-text;
+	}
+	.note-element {
+		@apply border border-[#5f6368] shadow-sm shadow-black rounded-lg;
+	}
+	.title {
+		@apply text-lg font-semibold dark:text-white;
+	}
+	.content {
+		@apply text-base font-light dark:text-white
+	}
 }
 
 body {
-  @apply bg-[#212121]
+	@apply bg-[#212121];
 }
 
 .createNote {
-  @apply mx-auto max-w-lg flex flex-col border border-[#5f6368] shadow-sm shadow-black rounded-lg
+	@apply mx-auto max-w-lg mb-8 flex flex-col border border-[#5f6368] shadow-sm shadow-black rounded-lg;
 }
 .input {
-  @apply bg-transparent p-4 focus:outline-none text-white break-words w-full resize-none
+	@apply bg-transparent p-4 focus:outline-none text-white break-words w-full resize-none;
 }
 
 .titleInput {
-  @apply text-lg
+	@apply text-lg;
 }
 .titleInput:empty::before {
-  content: attr(aria-label);
-  @apply custom-placeholder
+	content: attr(aria-label);
+	@apply custom-placeholder;
 }
 
 .contentInput {
-  @apply text-base
+	@apply text-base;
 }
 .contentInput:empty::before {
-  content: attr(aria-label);
-  @apply custom-placeholder
+	content: attr(aria-label);
+	@apply custom-placeholder;
 }
