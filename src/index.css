@@ -28,18 +28,14 @@ body {
 	@apply bg-transparent p-4 focus:outline-none text-white break-words w-full resize-none;
 }
 
-.titleInput {
-	@apply text-lg;
-}
-.titleInput:empty::before {
+.input:empty::before {
 	content: attr(aria-label);
 	@apply custom-placeholder;
 }
 
+.titleInput {
+	@apply text-lg;
+}
 .contentInput {
 	@apply text-base;
-}
-.contentInput:empty::before {
-	content: attr(aria-label);
-	@apply custom-placeholder;
 }

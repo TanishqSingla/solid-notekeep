@@ -9,8 +9,7 @@ const App: Component = () => {
 			<Header />
 			<main class="p-8">
 				<CreateNote />
-				<div class="p-8">
-					<Note title="Hello" content="hello world" />
+				<div class="p-8 flex flex-wrap justify-start gap-4 max-w-full">
 				</div>
 			</main>
 		</>
