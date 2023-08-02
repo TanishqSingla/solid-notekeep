@@ -1,4 +1,4 @@
-import { createSignal, onMount } from "solid-js";
+import { createSignal } from "solid-js";
 
 export default function () {
 	const [focused, setFocused] = createSignal(false);
